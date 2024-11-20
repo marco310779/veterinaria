@@ -1,5 +1,5 @@
 import { Veterinaria } from '../models/Veterinaria';  
-import { Cliente } from '../models/Cliente';  
+import { Cliente } from "../models/Clientes";  
 import { Paciente } from '../models/Paciente';  
 import { Proveedor } from '../models/Proveedor';  
 
@@ -34,13 +34,15 @@ export class RedVeterinarias {
         return false;  
     }  
 
+   
+
     // Métodos para Clientes  
-    public altaCliente(nombre: string, telefono: string): void {  
+    public altaCliente(nombre: string, telefono: number): void {  
         const cliente = new Cliente(nombre, telefono);  
         this.clientes.push(cliente);  
     }  
 
-    public modificarCliente(id: number, nombre: string, telefono: string): boolean {  
+    public modificarCliente(id: number, nombre: string, telefono: number): boolean {  
         const cliente = this.clientes.find(c => c.id === id);  
         if (cliente) {  
             cliente.nombre = nombre;  
@@ -85,12 +87,12 @@ export class RedVeterinarias {
     }  
 
     // Métodos para Proveedores  
-    public altaProveedor(nombre: string, telefono: string): void {  
+    public altaProveedor(nombre: string, telefono: number): void {  
         const proveedor = new Proveedor(nombre, telefono);  
         this.proveedores.push(proveedor);  
     }  
 
-    public modificarProveedor(id: number, nombre: string, telefono: string): boolean {  
+    public modificarProveedor(id: number, nombre: string, telefono: number): boolean {  
         const proveedor = this.proveedores.find(p => p.id === id);  
         if (proveedor) {  
             proveedor.nombre = nombre;  
